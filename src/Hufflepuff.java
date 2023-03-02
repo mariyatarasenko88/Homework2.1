@@ -33,4 +33,22 @@ public class Hufflepuff extends Hogwarts{
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
+    public void ptintStudent() {
+        System.out.println("Имя " + getStudentName() + " " + getStudentName() +
+                " трудолюбие " + diligence + " верность " + loyalty + " честность " + honesty);
+    }
+    public int calculateSumPoint() {
+        return diligence + loyalty + honesty;
+    }
+    public void printHufflepuffComparison(Hufflepuff faculty) {
+        int pointsStudent1 = this.calculateSumPoint();
+        int pointsStudent2 = faculty.calculateSumPoint();
+        if (pointsStudent1 > pointsStudent2) {
+            System.out.println(this.getStudentName() + " " + this.getStudentSurname() +
+                    " лучше Пуффендуец, чем " + faculty.getStudentName() + " " + faculty.getStudentSurname());
+        } else {
+            System.out.println(faculty.getStudentName() + " " + faculty.getStudentSurname() +
+                    " лучше Пуффендуец, чем " + this.getStudentName() + " " + this.getStudentSurname());
+        }
+    }
 }

@@ -53,4 +53,25 @@ public class Slytherin extends Hogwarts{
     public void setPowerLust(int powerLust) {
         this.powerLust = powerLust;
     }
+
+    public void printStudent() {
+        System.out.println("Имя " + getStudentName() + " " + getStudentSurname() +
+                " хитрость " + trick + " решительность " + determination +
+                " амбициозность " + ambition + " находчивость " + resourcefulness +
+                " жажда власти " + powerLust);
+    }
+    public int calculateSumPoint() {
+        return trick + determination + ambition + resourcefulness + powerLust;
+    }
+    public void printSlytherinComparison(Slytherin faculty) {
+        int pointsStudent1 = this.calculateSumPoint();
+        int pointsStudent2 = faculty.calculateSumPoint();
+        if (pointsStudent1 > pointsStudent2) {
+            System.out.println(this.getStudentName() + " " + this.getStudentSurname() +
+                    " лучше Слизеринец, чем " + faculty.getStudentName() + " " + faculty.getStudentSurname());
+        } else {
+            System.out.println(faculty.getStudentName() + " " + faculty.getStudentSurname() +
+                    " лучше Слизеринец, чем " + this.getStudentName() + " " + this.getStudentSurname());
+        }
+    }
 }
